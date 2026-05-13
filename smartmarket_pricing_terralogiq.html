@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SmartMarket — Partner Pricing Plan (Lepton × Terralogiq)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+<style>
+  :root {
+    /* Surfaces */
+    --color-background-primary:   #FFFFFF;
+    --color-background-secondary: #F7F7F5;
+    --color-background-tertiary:  #EEEEEC;
+
+    /* Text */
+    --color-text-primary:   #1A1A19;
+    --color-text-secondary: #535351;
+    --color-text-tertiary:  #8A8A87;
+
+    /* Borders */
+    --color-border-primary:   #D9D9D6;
+    --color-border-secondary: #C4C4C1;
+    --color-border-tertiary:  #E5E5E2;
+
+    /* Tier accents */
+    --lens:           #1D9E75;
+    --lens-deep:      #0F6E56;
+    --lens-soft:      #E1F5EE;
+
+    --insight:        #378ADD;
+    --insight-deep:   #185FA5;
+    --insight-soft:   #E6F1FB;
+
+    --foresight:      #7F77DD;
+    --foresight-deep: #534AB7;
+    --foresight-soft: #EEEDFE;
+
+    /* Tokens */
+    --border-radius-md: 8px;
+    --border-radius-lg: 14px;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--color-background-secondary);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 3rem;
+  }
+
+  .w { font-family: var(--font-sans); padding: 1rem 0 2.5rem; }
+
+  /* ========== PARTNER HEADER ========== */
+  .partner-bar {
+    background: var(--color-background-primary);
+    border: .5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.75rem;
+    text-align: center;
+  }
+
+  .partner-eyebrow {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .partner-eyebrow::before,
+  .partner-eyebrow::after {
+    content: '';
+    width: 16px;
+    height: 1px;
+    background: var(--color-border-secondary);
+  }
+
+  .partner-lockup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+  }
+
+  .partner-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 36px;
+  }
+  /* Replace these placeholder blocks with <img src="..."> for real logos */
+  .partner-logo img {
+    height: 36px;
+    width: auto;
+    display: block;
+  }
+
+  /* Lepton wordmark placeholder */
+  .logo-lepton .logo-mark {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #1D9E75 0%, #0F6E56 100%);
+    border-radius: 6px;
+    position: relative;
+  }
+  .logo-lepton .logo-mark::after {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    border-radius: 0 0 0 4px;
+  }
+  .logo-lepton .logo-name {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+  }
+
+  /* Terralogiq wordmark placeholder */
+  .logo-terralogiq .logo-mark {
+    width: 28px;
+    height: 28px;
+    background: #185FA5;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+  }
+  .logo-terralogiq .logo-mark::before {
+    content: '';
+    position: absolute;
+    inset: -2px 8px;
+    border: 1.5px solid rgba(255,255,255,0.55);
+    border-radius: 50%;
+  }
+  .logo-terralogiq .logo-mark::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0; right: 0;
+    height: 1.5px;
+    background: rgba(255,255,255,0.55);
+    transform: translateY(-50%);
+  }
+  .logo-terralogiq .logo-name {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+  }
+
+  .partner-x {
+    font-size: 15px;
+    color: var(--color-text-tertiary);
+    font-weight: 400;
+  }
+
+  .partner-note {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    margin-top: 0.85rem;
+    font-style: italic;
+  }
+
+  /* ========== MAIN HEADER ========== */
+  .hdr { text-align: center; margin-bottom: 2rem; }
+  .eye {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin-bottom: .4rem;
+  }
+  .ttl {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: .35rem;
+    letter-spacing: -0.01em;
+  }
+  .sub {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+  }
+
+  /* ========== GRID ========== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    align-items: start;
+  }
+  @media (max-width: 880px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+
+  /* ========== CARD ========== */
+  .card {
+    background: var(--color-background-primary);
+    border: .5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .card.feat {
+    border: 2px solid var(--insight);
+    box-shadow: 0 10px 30px -10px rgba(55, 138, 221, 0.18);
+  }
+
+  .pop {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--insight-soft);
+    color: var(--insight-deep);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .card-top { padding: 1.25rem 1.25rem 0; }
+
+  .ticon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: .75rem;
+    font-size: 18px;
+  }
+  .ticon.g { background: var(--lens-soft); color: var(--lens-deep); }
+  .ticon.b { background: var(--insight-soft); color: var(--insight-deep); }
+  .ticon.p { background: var(--foresight-soft); color: var(--foresight-deep); }
+
+  .tnm {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin-bottom: .15rem;
+  }
+  .ttag {
+    font-size: 11.5px;
+    color: var(--color-text-tertiary);
+    margin-bottom: .85rem;
+  }
+  .pr-num {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .pr-sub {
+    font-size: 11.5px;
+    color: var(--color-text-secondary);
+    margin: .25rem 0 .85rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 9px 0;
+    border-radius: var(--border-radius-md);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: .5px solid var(--color-border-secondary);
+    background: var(--color-background-secondary);
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+    font-family: inherit;
+    transition: all .15s ease;
+  }
+  .btn:hover { background: var(--color-background-tertiary); }
+  .btn.bl { background: var(--insight); color: #fff; border-color: var(--insight-deep); }
+  .btn.bl:hover { background: var(--insight-deep); }
+  .btn.pu { background: var(--foresight-deep); color: #fff; border-color: #3C3489; }
+  .btn.pu:hover { background: #3C3489; }
+
+  .div {
+    border: none;
+    border-top: .5px solid var(--color-border-tertiary);
+    margin: 0 0 .85rem;
+  }
+
+  .sec-lbl {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    padding: 0 1.25rem;
+    margin-bottom: .5rem;
+  }
+  .ideal {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    padding: 0 1.25rem;
+    margin-bottom: .85rem;
+    line-height: 1.5;
+  }
+  .ideal strong { color: var(--color-text-primary); font-weight: 600; }
+
+  /* MODULE LIST */
+  .mod-list { padding: 0 1.25rem; }
+  .mod-item {
+    border: .5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-md);
+    margin-bottom: 6px;
+    overflow: hidden;
+    background: var(--color-background-primary);
+  }
+  .mod-hdr {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+    background: transparent;
+    transition: background .15s ease;
+  }
+  .mod-hdr:hover { background: var(--color-background-secondary); }
+  .mod-icon { font-size: 15px; flex-shrink: 0; }
+  .mod-icon.g { color: var(--lens); }
+  .mod-icon.b { color: var(--insight); }
+  .mod-icon.p { color: var(--foresight); }
+  .mod-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    flex: 1;
+  }
+  .mod-chev {
+    font-size: 14px;
+    color: var(--color-text-tertiary);
+    transition: transform .2s;
+  }
+  .mod-item.open .mod-chev { transform: rotate(180deg); }
+  .mod-body { display: none; padding: 0 10px 9px 32px; }
+  .mod-item.open .mod-body { display: block; }
+  .mod-feats { list-style: none; }
+  .mod-feats li {
+    font-size: 11.5px;
+    color: var(--color-text-secondary);
+    padding: 2px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    line-height: 1.4;
+  }
+  .mod-feats li i {
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: var(--color-text-tertiary);
+  }
+  .mod-val {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: .5px solid var(--color-border-tertiary);
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  .premium-badge {
+    font-size: 10px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #F5D67A 0%, #E0B650 100%);
+    color: #5A4612;
+    padding: 1px 7px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    letter-spacing: 0.03em;
+  }
+
+  /* CARD BOTTOM */
+  .card-bot { padding: 0 1.25rem 1.25rem; }
+  .excl { margin-top: .5rem; }
+  .excl-lbl {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin-bottom: .4rem;
+  }
+  .excl-list { list-style: none; }
+  .excl-list li {
+    font-size: 11.5px;
+    color: var(--color-text-tertiary);
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .excl-list li i { font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+
+  .quote-strip {
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-lg);
+    padding: 1rem 1.25rem;
+    margin-top: 1.25rem;
+    border-left: 3px solid var(--color-border-secondary);
+  }
+  .card.feat .quote-strip { border-left-color: var(--insight); }
+  .quote-strip p {
+    font-size: 12.5px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  /* CAPABILITY MATURITY */
+  .prog-section {
+    margin-top: 2rem;
+    background: var(--color-background-primary);
+    border: .5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 1.25rem;
+  }
+  .prog-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+  }
+  .prog-title { font-size: 13px; font-weight: 600; color: var(--color-text-primary); }
+  .prog-hint  { font-size: 11px; color: var(--color-text-tertiary); }
+
+  .module-counts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 1rem;
+  }
+  .mc {
+    background: var(--color-background-secondary);
+    border: .5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-md);
+    padding: .65rem;
+    text-align: center;
+  }
+  .mc-n { font-size: 22px; font-weight: 600; margin-bottom: 2px; line-height: 1; }
+  .mc-n.g { color: var(--lens); }
+  .mc-n.b { color: var(--insight); }
+  .mc-n.p { color: var(--foresight); }
+  .mc-lbl { font-size: 11px; color: var(--color-text-secondary); }
+
+  .prog-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 32px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .prog-row:last-child { margin-bottom: 0; }
+  .prog-lbl { font-size: 12px; color: var(--color-text-secondary); font-weight: 500; }
+  .prog-bg {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--color-background-tertiary);
+    overflow: hidden;
+  }
+  .prog-fill { height: 100%; border-radius: 3px; transition: width .8s ease; }
+  .prog-n {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-align: right;
+  }
+
+  /* ADDITIONAL COSTS CALLOUT */
+  .cost-note {
+    margin-top: 1.25rem;
+    background: var(--color-background-primary);
+    border: .5px solid var(--color-border-tertiary);
+    border-left: 3px solid var(--insight);
+    border-radius: var(--border-radius-lg);
+    padding: 1.25rem 1.5rem;
+  }
+  .cost-note-head {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  .cost-note-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--insight-soft);
+    color: var(--insight-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .cost-note-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 3px;
+    letter-spacing: -0.005em;
+  }
+  .cost-note-sub {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+  .cost-note-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 720px) {
+    .cost-note-items { grid-template-columns: 1fr; }
+  }
+  .cost-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-md);
+  }
+  .cost-item i {
+    font-size: 20px;
+    color: var(--insight-deep);
+    flex-shrink: 0;
+  }
+  .cost-item-name {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    line-height: 1.3;
+  }
+  .cost-item-desc {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    line-height: 1.3;
+    margin-top: 2px;
+  }
+
+  /* FOOTER LINE */
+  .footer-line {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: .5px solid var(--color-border-tertiary);
+    text-align: center;
+    font-size: 12px;
+    color: var(--color-text-tertiary);
+  }
+  .footer-line em {
+    font-style: italic;
+    color: var(--color-text-secondary);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2 class="sr-only">SmartMarket Partner Pricing Plan for Terralogiq — Lens, Insight, and Foresight tiers</h2>
+
+<div class="w">
+
+  <!-- ========== PARTNER HEADER ========== -->
+  <div class="partner-bar">
+    <p class="partner-eyebrow">Partner Pricing Plan</p>
+    <div class="partner-lockup">
+      <!-- LEPTON wordmark — replace text with <img src="lepton-logo.svg" alt="Lepton"> when ready -->
+      <div class="partner-logo logo-lepton">
+        <span class="logo-name">Lepton</span>
+      </div>
+
+      <span class="partner-x">×</span>
+
+      <!-- TERRALOGIQ wordmark — replace text with <img src="terralogiq-logo.svg" alt="Terralogiq"> when ready -->
+      <div class="partner-logo logo-terralogiq">
+        <span class="logo-name">Terralogiq</span>
+      </div>
+    </div>
+    <p class="partner-note">Plan tailored exclusively for Terralogiq</p>
+  </div>
+
+  <!-- ========== MAIN HEADER ========== -->
+  <div class="hdr">
+    <p class="eye">SmartMarket plans · Annual billing</p>
+    <h1 class="ttl">Market intelligence, at every scale</h1>
+    <p class="sub">From first map to full AI expansion engine — grow at your own pace</p>
+  </div>
+
+  <!-- ========== THREE TIERS ========== -->
+  <div class="grid">
+
+    <!-- LENS -->
+    <div class="card">
+      <div class="card-top">
+        <div class="ticon g" aria-hidden="true"><i class="ti ti-eye"></i></div>
+        <p class="tnm">Lens</p>
+        <p class="ttag">Visualization &amp; market discovery</p>
+        <div><span class="pr-num">$5,000</span></div>
+        <p class="pr-sub">per year · billed annually</p>
+        <button class="btn" onclick="alert('Lens — Get started')">Get started ↗</button>
+        <hr class="div"/>
+        <p class="sec-lbl">Ideal for</p>
+        <p class="ideal"><strong>Regional ops, franchise teams,</strong> small-to-mid retail &amp; QSR brands beginning their location intelligence journey</p>
+        <hr class="div"/>
+        <p class="sec-lbl">5 included modules</p>
+      </div>
+      <div class="mod-list" id="ml1"></div>
+      <div class="card-bot">
+        <div class="excl">
+          <p class="excl-lbl">Not included</p>
+          <ul class="excl-list">
+            <li><i class="ti ti-x" aria-hidden="true"></i>Predictive analytics</li>
+            <li><i class="ti ti-x" aria-hidden="true"></i>White space &amp; site scoring</li>
+            <li><i class="ti ti-x" aria-hidden="true"></i>AI recommendations</li>
+            <li><i class="ti ti-x" aria-hidden="true"></i>API access</li>
+          </ul>
+        </div>
+        <div class="quote-strip">
+          <p>"A foundational location intelligence platform for visual market understanding and geographic decision-making."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- INSIGHT -->
+    <div class="card feat">
+      <span class="pop">Most popular</span>
+      <div class="card-top">
+        <div class="ticon b" aria-hidden="true"><i class="ti ti-brain"></i></div>
+        <p class="tnm">Insight</p>
+        <p class="ttag">Expansion planning &amp; decision intelligence</p>
+        <div><span class="pr-num">$15,000</span></div>
+        <p class="pr-sub">per year · billed annually</p>
+        <button class="btn bl" onclick="alert('Insight — Start growing')">Start growing ↗</button>
+        <hr class="div"/>
+        <p class="sec-lbl">Ideal for</p>
+        <p class="ideal"><strong>Expansion teams, national retail, QSR, telecom &amp; BFSI</strong> organizations evaluating data-driven growth</p>
+        <hr class="div"/>
+        <p class="sec-lbl">Everything in Lens + 7 advanced modules</p>
+      </div>
+      <div class="mod-list" id="ml2"></div>
+      <div class="card-bot">
+        <div class="excl">
+          <p class="excl-lbl">Not included</p>
+          <ul class="excl-list">
+            <li><i class="ti ti-x" aria-hidden="true"></i>Predictive sales forecasting</li>
+            <li><i class="ti ti-x" aria-hidden="true"></i>AI expansion simulation</li>
+            <li><i class="ti ti-x" aria-hidden="true"></i>Custom ML models</li>
+            <li><i class="ti ti-x" aria-hidden="true"></i>Real-time streaming</li>
+          </ul>
+        </div>
+        <div class="quote-strip">
+          <p>"A strategic expansion intelligence platform for data-driven site selection, network planning, and territory optimization."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORESIGHT -->
+    <div class="card">
+      <div class="card-top">
+        <div class="ticon p" aria-hidden="true"><i class="ti ti-robot"></i></div>
+        <p class="tnm">Foresight</p>
+        <p class="ttag">AI-powered predictive geo-intelligence</p>
+        <div><span class="pr-num">$25,000</span></div>
+        <p class="pr-sub">per year · billed annually</p>
+        <button class="btn pu" onclick="alert('Foresight — Talk to sales')">Talk to sales ↗</button>
+        <hr class="div"/>
+        <p class="sec-lbl">Ideal for</p>
+        <p class="ideal"><strong>Enterprise retail chains, telecom operators, BFSI, e-commerce</strong> &amp; government organizations</p>
+        <hr class="div"/>
+        <p class="sec-lbl">Everything in Insight + 8 enterprise modules</p>
+      </div>
+      <div class="mod-list" id="ml3"></div>
+      <div class="card-bot">
+        <div class="quote-strip">
+          <p>"A full-scale AI-powered geographic intelligence ecosystem for enterprise expansion, predictive planning, and strategic market optimization."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== ADDITIONAL COSTS BORNE BY PARTNER ========== -->
+  <div class="cost-note">
+    <div class="cost-note-head">
+      <div class="cost-note-icon"><i class="ti ti-info-circle" aria-hidden="true"></i></div>
+      <div>
+        <p class="cost-note-title">Additional costs · borne by Terralogiq</p>
+        <p class="cost-note-sub">In addition to the SmartMarket plan pricing above, the following two operational cost components are borne by Terralogiq as the partner.</p>
+      </div>
+    </div>
+    <div class="cost-note-items">
+      <div class="cost-item">
+        <i class="ti ti-map-pin-search" aria-hidden="true"></i>
+        <div>
+          <p class="cost-item-name">Places Insight</p>
+          <p class="cost-item-desc">Charged on a per-license basis</p>
+        </div>
+      </div>
+      <div class="cost-item">
+        <i class="ti ti-brand-google" aria-hidden="true"></i>
+        <div>
+          <p class="cost-item-name">Google Maps Core API</p>
+          <p class="cost-item-desc">API request &amp; consumption charges</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== CAPABILITY MATURITY ========== -->
+  <div class="prog-section">
+    <div class="prog-head">
+      <span class="prog-title">Capability maturity</span>
+      <span class="prog-hint">Score out of 100</span>
+    </div>
+    <div class="module-counts">
+      <div class="mc"><div class="mc-n g">5</div><div class="mc-lbl">Lens modules</div></div>
+      <div class="mc"><div class="mc-n b">12</div><div class="mc-lbl">Insight modules</div></div>
+      <div class="mc"><div class="mc-n p">20</div><div class="mc-lbl">Foresight modules</div></div>
+    </div>
+    <div class="prog-row">
+      <span class="prog-lbl">Lens</span>
+      <div class="prog-bg"><div class="prog-fill" style="width:30%;background:#1D9E75"></div></div>
+      <span class="prog-n">30</span>
+    </div>
+    <div class="prog-row">
+      <span class="prog-lbl">Insight</span>
+      <div class="prog-bg"><div class="prog-fill" style="width:65%;background:#378ADD"></div></div>
+      <span class="prog-n">65</span>
+    </div>
+    <div class="prog-row">
+      <span class="prog-lbl">Foresight</span>
+      <div class="prog-bg"><div class="prog-fill" style="width:100%;background:#7F77DD"></div></div>
+      <span class="prog-n">100</span>
+    </div>
+  </div>
+
+  <div class="footer-line">
+    <em>SmartMarket evolves from a visualization platform into a full-scale AI-powered expansion intelligence ecosystem.</em>
+  </div>
+
+</div>
+</div>
+
+<script>
+const mods = {
+  1: [
+    { icon:'ti-map', name:'Interactive GIS Visualization', col:'g', feats:['Multi-layer map visualization','Zoom-based geographic analysis','Administrative boundary & grid layers','Heatmap & cluster visualization','Dynamic layer toggling'], val:'Quickly understand geographic market distribution and operational footprint' },
+    { icon:'ti-users', name:'Demographic Intelligence', col:'g', feats:['Population & household count mapping','Age-group & family size analysis','Urban vs rural segmentation'], val:'Identify customer-rich markets and target audience concentration' },
+    { icon:'ti-building-store', name:'POI & Competitor Intelligence', col:'g', feats:['Competitor store mapping','Category & brand-wise POI layers','Anchor tenant identification','Commercial hotspot mapping'], val:'Understand competitive landscape and market saturation' },
+    { icon:'ti-circle-dotted', name:'Catchment Visualization', col:'g', feats:['Radius-based catchment visualization','Basic drive-time visualization','Population within catchment analysis'], val:'Understand store reach and local customer accessibility' },
+    { icon:'ti-file-analytics', name:'Dashboard & Reporting', col:'g', feats:['Standard dashboards & analytics summaries','PDF & Excel export'], val:'Faster reporting workflows and simplified business reviews' },
+  ],
+  2: [
+    { icon:'ti-map-search', name:'White Space Analysis', col:'b', feats:['Unserved market identification','Demand-supply gap analysis','Opportunity zone & expansion gap detection','Low competition zone scoring'], val:'Discover untapped markets and accelerate expansion planning' },
+    { icon:'ti-target', name:'Site Selection & Scoring', col:'b', feats:['Multi-variable site scoring engine','Competitor, affluence & footfall-weighted ranking','Rule-based site recommendation','Custom scoring parameters'], val:'Reduce expansion risk and standardize site evaluation' },
+    { icon:'ti-clock-hour-4', name:'Advanced Catchment Intelligence', col:'b', feats:['Drive-time & walk-time isochrone analysis','Custom catchment creation','Catchment overlap & penetration analysis'], val:'Optimize store coverage and identify overlapping territories' },
+    { icon:'ti-arrows-shuffle', name:'Cannibalization Analysis', col:'b', feats:['Existing vs proposed store overlap','Customer diversion & revenue impact estimation','Territory conflict detection'], val:'Avoid self-competition and protect existing revenues' },
+    { icon:'ti-polygon', name:'Territory Planning', col:'b', feats:['Sales territory optimization','Regional cluster & zone balancing','Service area management'], val:'Improve operational efficiency and reduce regional imbalance' },
+    { icon:'ti-api', name:'API & Data Services', col:'b', feats:['Limited API access','Location scoring, POI & demographic APIs','Controlled API consumption'], val:'Enable platform integration and automate workflows' },
+    { icon:'ti-chart-bar', name:'Advanced Reporting & BI', col:'b', feats:['Custom dashboards & comparative reports','Multi-location benchmarking','Scheduled reporting & BI exports'], val:'Faster executive decision-making and centralized analytics visibility' },
+  ],
+  3: [
+    { icon:'ti-trending-up', name:'Predictive Analytics Engine', col:'p', isPremium:true, feats:['Sales & revenue forecasting','Demand & market growth prediction','Store viability & future hotspot estimation'], val:'Predict business performance before investment' },
+    { icon:'ti-sparkles', name:'AI Site Recommendation', col:'p', isPremium:true, feats:['AI-generated expansion recommendations','Similarity-based location matching','ML-driven ranking algorithms & pattern recognition'], val:'Faster decision-making and scalable expansion intelligence' },
+    { icon:'ti-traffic-cone', name:'Mobility & Consumer Movement', col:'p', isPremium:true, feats:['Human mobility & origin-destination mapping','Daily movement pattern & commuter flow analysis','Migration trend visualization'], val:'Understand customer behavior and optimize store placement' },
+    { icon:'ti-report-money', name:'Consumer Spending Intelligence', col:'p', isPremium:true, feats:['Credit card spend analytics','Category-wise spending & lifestyle segmentation','Brand affinity analysis'], val:'Improve targeting accuracy and understand spending behavior' },
+    { icon:'ti-plug-connected', name:'Enterprise Integration', col:'p', isPremium:true, feats:['Real-time APIs','ERP, CRM & BI tool integration','Data warehouse connectivity','SSO/SAML authentication'], val:'Seamless enterprise adoption and workflow automation' },
+    { icon:'ti-dimensions', name:'GeoAI & Simulation Engine', col:'p', isPremium:true, feats:['Expansion & scenario simulation','Network & portfolio optimization','Multi-store rollout planning'], val:'Strategic planning support and risk-controlled scaling' },
+    { icon:'ti-shield-lock', name:'Enterprise Governance & Security', col:'p', isPremium:true, feats:['Enterprise-grade security & SSO/SAML','Audit logs & access governance','Private cloud & on-premise deployment'], val:'Enterprise compliance and secure data governance' },
+    { icon:'ti-headset', name:'Managed Intelligence Services', col:'p', isPremium:true, feats:['Dedicated customer success manager','Customised and bespoke solutions around location intelligence','SLA-backed support & quarterly business reviews'], val:'Strategic partnership engagement and higher ROI realization' },
+  ]
+};
+
+function buildMods(tier, containerId) {
+  const c = document.getElementById(containerId);
+  mods[tier].forEach((m, i) => {
+    const id = `mod-${tier}-${i}`;
+    const premiumBadge = m.isPremium ? '<span class="premium-badge" aria-label="Premium module">Premium</span>' : '';
+    const featsHtml = m.feats.map(f => `<li><i class="ti ti-point" aria-hidden="true"></i>${f}</li>`).join('');
+    c.innerHTML += `<div class="mod-item" id="${id}">
+      <div class="mod-hdr" onclick="toggleMod('${id}')" role="button" aria-expanded="false">
+        <i class="ti ${m.icon} mod-icon ${m.col}" aria-hidden="true"></i>
+        <span class="mod-name">${m.name}</span>
+        ${premiumBadge}
+        <i class="ti ti-chevron-down mod-chev" aria-hidden="true"></i>
+      </div>
+      <div class="mod-body">
+        <ul class="mod-feats">${featsHtml}</ul>
+        <p class="mod-val">${m.val}</p>
+      </div>
+    </div>`;
+  });
+}
+
+function toggleMod(id) {
+  const el = document.getElementById(id);
+  const hdr = el.querySelector('.mod-hdr');
+  const isOpen = el.classList.toggle('open');
+  hdr.setAttribute('aria-expanded', isOpen);
+}
+
+buildMods(1,'ml1');
+buildMods(2,'ml2');
+buildMods(3,'ml3');
+</script>
+
+</body>
+</html>
