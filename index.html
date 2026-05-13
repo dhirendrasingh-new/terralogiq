@@ -497,6 +497,65 @@
     text-align: right;
   }
 
+  /* PARTNER PRICING NOTICE */
+  .partner-notice {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    background: var(--color-background-primary);
+    border: .5px solid var(--color-border-tertiary);
+    border-left: 3px solid var(--lens);
+    border-radius: var(--border-radius-lg);
+    padding: 1.25rem 1.5rem;
+  }
+  .partner-notice-head {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: .85rem;
+  }
+  .partner-notice-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--lens-soft);
+    color: var(--lens-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .partner-notice-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 3px;
+    letter-spacing: -0.005em;
+  }
+  .partner-notice-body {
+    font-size: 12.5px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+  .partner-notice-body strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+  .partner-notice-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--lens-deep);
+    background: var(--lens-soft);
+    padding: 3px 9px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+
   /* ADDITIONAL COSTS CALLOUT */
   .cost-note {
     margin-top: 1.25rem;
@@ -621,6 +680,20 @@
       </div>
     </div>
     <p class="partner-note">Plan tailored exclusively for Terralogiq</p>
+  </div>
+
+  <!-- ========== PARTNER PRICING NOTICE ========== -->
+  <div class="partner-notice">
+    <div class="partner-notice-head">
+      <div class="partner-notice-icon"><i class="ti ti-shield-check" aria-hidden="true"></i></div>
+      <div>
+        <span class="partner-notice-tag"><i class="ti ti-handshake" aria-hidden="true"></i> Partner pricing</span>
+        <p class="partner-notice-title">A note for Terralogiq</p>
+        <p class="partner-notice-body">
+          The pricing shown below represents <strong>Lepton's exclusive partner rates for Terralogiq</strong> and is not the end-customer list price. As the partner-of-record, <strong>Terralogiq is free to apply its own margin, service fees, or commission</strong> on top of these partner rates when packaging SmartMarket for its clients. Final customer-facing pricing, billing terms, and go-to-market positioning remain entirely at Terralogiq's discretion.
+        </p>
+      </div>
+    </div>
   </div>
 
   <!-- ========== MAIN HEADER ========== -->
